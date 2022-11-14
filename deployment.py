@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
+import os
+
 import aws_cdk as cdk
-from viburnum.deployer import AppStack
-from viburnum.application import Application
+from viburnum.deployer.builders import AppStack
 
-from functions.sample_func.handler import sample_func
-
-
-app = Application("HelloWorldApp")
-# Handlers
-app.add_handler(sample_func)
+from app import app
 
 
 cdk_app = cdk.App()
